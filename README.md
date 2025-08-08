@@ -2,7 +2,7 @@
 
 **"আমরা কৃত্রিম সাধারণ বুদ্ধিমত্তার জগতে একটি নতুন দিগন্ত উন্মোচন করছি।"**
 
-This repository contains the source code and resources for **GenZ**, a groundbreaking project to create the first-ever Bangla Artificial General Intelligence (AGI) model. Our mission is to build an autonomous and highly capable AI that understands and communicates in the Bangla language with unprecedented fluency and accuracy. This project is proudly led by [likhonsheikh.xyz](https://likhonsheikh.xyz).
+This repository contains the source code and resources for **GenZ**, a groundbreaking project to create the first-ever Bangla Artificial General Intelligence (AGI) model. Our mission is to build an autonomous and highly capable AI that understands and communicates in the Bangla language with unprecedented fluency and accuracy. This project is proudly led by [likhonsheikhofficial](https://github.com/likhonsheikhofficial).
 
 ## Automated Workflow
 
@@ -25,12 +25,15 @@ This repository contains the source code and resources for **GenZ**, a groundbre
 
 ## Setup
 
-To enable the automated workflow, you need to add your Hugging Face Hub token as a secret to your GitHub repository:
+To enable automatic model deployment, you need to set up your Hugging Face Hub token as a repository secret:
 
-1.  Go to your repository's **Settings** > **Secrets and variables** > **Actions**.
-2.  Click **New repository secret**.
-3.  Name the secret `HUGGING_FACE_HUB_TOKEN`.
-4.  Paste your Hugging Face Hub token (with write permissions) into the value field.
+1. Go to [Hugging Face Hub](https://huggingface.co/settings/tokens) and create a new access token
+2. Visit your GitHub repository's settings page
+3. Navigate to "Settings" > "Secrets and variables" > "Actions"
+4. Click "New repository secret"
+5. Name: `HUGGING_FACE_HUB_TOKEN`
+6. Value: Your Hugging Face Hub access token
+7. Click "Add secret"
 
 Once the secret is set, any push to the `main` branch will trigger the training and deployment process.
 
