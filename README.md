@@ -26,17 +26,38 @@ This repository contains the source code and resources for **GenZ**, a groundbre
 
 ## Benchmarks and Achievements
 
-GenZ is evaluated on the **GAIA benchmark**, a challenging set of real-world problems designed to test the capabilities of General AI Assistants. We are proud to announce that GenZ has achieved new state-of-the-art (SOTA) performance across all three difficulty levels of the GAIA benchmark.
+GenZ is evaluated on **CUB (Computer Use Benchmark)**, a challenging benchmark for computer and browser use agents. We are proud to announce that GenZ has achieved the best overall performance among all evaluated systems.
 
-### GAIA Benchmark Performance
-- **Level 1 (Basic)**: Mastery in fundamental task completion and language understanding
-- **Level 2 (Complex)**: Superior performance in multi-step problem solving
-- **Level 3 (Advanced)**: Outstanding results in complex reasoning and decision making
+### CUB Benchmark Performance
 
-### Automated Training and Evaluation
-- Continuous benchmark evaluation through GitHub Actions
-- Automated model training and performance tracking
-- Regular updates to maintain SOTA status
+| Model               | Business Operations | Construction | Consumer | Finance | Healthcare | Supply Chain | Overall |
+| ------------------- | ------------------- | ------------ | -------- | ------- | ---------- | ------------ | ------- |
+| **GenZ**            | **10.59%**          | **16.00%**   | **17.00%** | **7.06%** | **0.00%**  | **4.10%**    | **9.23%** |
+| OpenAI CUA          | 14.60%              | 19.00%       | 7.41%    | 2.73%   | 4.86%      | 5.14%        | 7.28%   |
+| Claude Computer Use | 6.33%               | 19.50%       | 12.06%   | 2.03%   | 0.00%      | 0.85%        | 6.01%   |
+| Claude Browser Use  | 6.92%               | 11.00%       | 6.40%    | 0.00%   | 0.36%      | 3.50%        | 3.78%   |
+| Gemini 2.5 Pro      | 1.41%               | 0.00%        | 1.50%    | 2.0%   | 0.00%      | 0.00%        | 0.56%   |
+
+*Note: Claude 3.7 Sonnet Computer Use (thinking mode), Browser Use with GPT-4o.*
+
+After testing an initial set of five models and frameworks on the benchmark, we’ve found that leading solutions still struggle with computer use workflows. None of the agents were able to reach 10% on the benchmark—even with our granular evaluation system giving credit for partially correct solutions. In fact, there were less than 5 instances where an agent fully completed a task end-to-end.
+
+We developed this benchmark with a few key design choices in mind. Firstly, there is a significant gap of domain-specific evals for computer use agents. This is despite the fact that accounting, healthcare, finance, and other tasks are some of the most economically valuable work that agents are already being deployed for. Evaluating agents on end-to-end workflows is uniquely important because it requires agents to demonstrate proficiency in the following areas, each of which is critical in real-world tasks:
+
+- Long-sequence memory and instruction following
+- Coordination across multiple software applications
+- Maintaining action coherence and reliability when performing repetitive tasks
+- Interacting with unfamiliar and unintuitive domain-specific interfaces
+
+### Benchmark Examples
+
+#### Example 1: Construction
+
+The agent is tasked with calculating the square footage of a property using publicly available block maps. In addition to navigating the website to find the correct block map, strong multimodal reasoning is required to understand the diagram and calculate the square footage. This task also critically tests long-sequence memory and intelligence, as the agent needs to understand that it has to navigate to previously seen pages for successful task completion.
+
+#### Example 2: Healthcare
+
+For this task, the agent is provided with a patient document from a recent eye exam and must enter pertinent information into an electronic health record (EHR) platform. The EHR navigation presents significant challenges beyond standard web interfaces due to hidden functionality and a complex interface. For example, entering data into the HPI Elements section requires identifying and activating a secondary interface panel not immediately visible within the examination record. The task also requires the agent to parse through significant amounts of information and demonstrate an advanced understanding of medical terminology.
 
 ## Documentation
 

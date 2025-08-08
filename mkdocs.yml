@@ -28,7 +28,10 @@ nav:
     - Setup: training/setup.md
     - Configuration: training/configuration.md
     - Models: training/models.md
-  - Benchmarks: benchmarks.md
+  - Benchmarks:
+    - Overview: benchmarks.md
+    - Computer Use Benchmark: benchmarks/computer-use.md
+    - GAIA Performance: benchmarks/gaia.md
   - API Reference: api-reference.md
   - Contributing: contributing.md
 
