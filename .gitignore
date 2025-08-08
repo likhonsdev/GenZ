@@ -1,0 +1,19 @@
+# Virtual Environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# IDE specific
+.vscode/
+.idea/
+
+# Logs
+logs/
+
+# Checkpoints
+GenZ-checkpoints/
+
+# OS specific
+.DS_Store
+Thumbs.db
