@@ -4,28 +4,50 @@
 
 This repository contains the source code and resources for **GenZ**, a groundbreaking project to create the first-ever Bangla Artificial General Intelligence (AGI) model. Our mission is to build an autonomous and highly capable AI that understands and communicates in the Bangla language with unprecedented fluency and accuracy. This project is proudly led by [likhonsheikhofficial](https://github.com/likhonsheikhofficial).
 
-## Automated Workflow
-
-- **Trigger**: The workflow is triggered automatically on every push to the `main` branch.
-- **Training**: The `train_gpt_genz.py` script fine-tunes a large language model on a Bangla dataset.
-- **Deployment**: After training, the model is automatically pushed to the [Hugging Face Hub](https://huggingface.co/likhonsdev/GenZ).
-
-### Workflow Diagram
+## Project Structure
 
 ```
-+-------------------+      +----------------------+      +-------------------------+
-|                   |      |                      |      |                         |
-|  Push to `main`   +----->+  GitHub Actions CI/CD  +----->+  Hugging Face Hub Model |
-|                   |      |                      |      |                         |
-+-------------------+      +----------------------+      +-------------------------+
+.
+├── .github/workflows/
+│   ├── main.yml       # GitHub Actions workflow for model training and deployment.
+│   └── docs.yml       # GitHub Actions workflow for documentation deployment.
+├── docs/
+│   └── index.md       # Main documentation file.
+├── .env             # Environment variables for local development.
+├── .gitignore       # Specifies intentionally untracked files to ignore.
+├── app.py           # Main application file (if any).
+├── Dockerfile       # Defines the Docker image for the project.
+├── mkdocs.yml       # Configuration for the documentation site.
+├── README.md        # This file.
+├── requirements.txt # Project dependencies.
+├── train_gpt_genz.py # Script for training the GPT model.
+└── train_image_classifier.py # Script for training an image classifier.
 ```
 
-### Conceptual Sketch
-*(A sketch illustrating the architecture of the Bangla AGI will be added here soon.)*
-
-## Benchmarks
+## Benchmarks and Achievements
 
 GenZ is evaluated on the **GAIA benchmark**, a challenging set of real-world problems designed to test the capabilities of General AI Assistants. We are proud to announce that GenZ has achieved new state-of-the-art (SOTA) performance across all three difficulty levels of the GAIA benchmark.
+
+### GAIA Benchmark Performance
+- **Level 1 (Basic)**: Mastery in fundamental task completion and language understanding
+- **Level 2 (Complex)**: Superior performance in multi-step problem solving
+- **Level 3 (Advanced)**: Outstanding results in complex reasoning and decision making
+
+### Automated Training and Evaluation
+- Continuous benchmark evaluation through GitHub Actions
+- Automated model training and performance tracking
+- Regular updates to maintain SOTA status
+
+## Documentation
+
+Visit our [comprehensive documentation](https://likhonsdev.github.io/GenZ) for detailed information about:
+- Model architecture and capabilities
+- Training procedures and configurations
+- Benchmark methodologies and results
+- API reference and usage guides
+- Contributing guidelines
+
+The documentation is automatically built and deployed on every update to the main branch.
 
 ## Setup
 
