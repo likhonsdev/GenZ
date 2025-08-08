@@ -1,12 +1,12 @@
-# GenZ: Automated Training and Deployment
+# GenZ: The First-Ever Bangla AGI Model
 
-This repository contains the code for training and deploying the GenZ model. The process is fully automated using GitHub Actions.
+This repository contains the source code and resources for **GenZ**, a groundbreaking project to create the first-ever Bangla Artificial General Intelligence (AGI) model. Our mission is to build an autonomous and highly capable AI that understands and communicates in the Bangla language with unprecedented fluency and accuracy.
 
 ## Automated Workflow
 
 - **Trigger**: The workflow is triggered automatically on every push to the `main` branch.
-- **Training**: The `train_gpt_genz.py` script fine-tunes the `bigscience/bloom-560m` model on the `rishiraj/bengalichat` dataset.
-- **Deployment**: After training, the model is automatically pushed to the [Hugging Face Hub](https://huggingface.co/likhonsheikh/GenZ).
+- **Training**: The `train_gpt_genz.py` script fine-tunes a large language model on a Bangla dataset.
+- **Deployment**: After training, the model is automatically pushed to the [Hugging Face Hub](https://huggingface.co/likhonsdev/GenZ).
 
 ## Setup
 
