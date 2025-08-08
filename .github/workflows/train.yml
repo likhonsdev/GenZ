@@ -8,6 +8,13 @@ on:
     - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight
   workflow_dispatch:  # Allow manual triggers
 
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+  actions: write
+  issues: write
+
 jobs:
   train:
     runs-on: ubuntu-latest

@@ -1,0 +1,38 @@
+name: Docker Model Runner with Dagger
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run_model:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Pull AI Model
+        run: docker model pull index.docker.io/ai/qwen2.5:7B-F16
+
+      - name: Run Dagger with Local Model
+        env:
+          OPENAI_BASE_URL: http://model-runner.docker.internal/engines/llama.cpp/v1/
+          OPENAI_DISABLE_STREAMING: "true"
+          OPENAI_MODEL: index.docker.io/ai/qwen2.5:7B-F16
+        run: |
+          myenv=$(env |
+            with-directory-input "empty" $(directory) "empty directory to add new files to" |
+            with-directory-output "full" "a directory containing the ascii art files")
+
+          llm |
+            with-env $myenv |
+            with-prompt "start with empty, add 2 new smiley-themed pieces of ascii art, return as full" |
+            env |
+            output "full" |
+            as-directory |
+            terminal
