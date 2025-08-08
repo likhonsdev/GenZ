@@ -1,0 +1,7 @@
+# configs/bloom_config.yaml
+model:
+  base: bigscience/bloom-7b1
+  adapters:
+    - region: ap-southeast
+      dataset: chatlogs/regional_malay.jsonl
+  quantization: bitsandbytes-8bit

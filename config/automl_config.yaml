@@ -1,0 +1,28 @@
+modelType: MULTICLASS_TEXT
+datasetConfig:
+  datasetDisplayName: genz_model
+  dataFormat: csv
+  gcsSource:
+    uri: gs://genz-training-data/*.csv
+
+trainingConfig:
+  targetColumn: label
+  optimizationObjective: MINIMIZE_LOG_LOSS
+  budgetMilliNodeHours: 8000
+
+vertexEndpoint:
+  displayName: genz-endpoint
+  machineType: n1-standard-4
+  minReplicaCount: 1
+  maxReplicaCount: 5
+  
+evaluationConfig:
+  evaluationMetrics:
+    - accuracy
+    - precision
+    - recall
+    - f1Score
+  splitRatio:
+    training: 0.8
+    validation: 0.1
+    test: 0.1

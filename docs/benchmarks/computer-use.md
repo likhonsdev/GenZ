@@ -4,6 +4,33 @@
 
 The Computer Use Benchmark (CUB) is a challenging evaluation framework designed to assess AI agents' capabilities in real-world computer usage scenarios. This benchmark is particularly significant as it tests agents' abilities in economically valuable domains like accounting, healthcare, finance, and other professional tasks.
 
+## Automated Evaluation Process
+
+Our evaluation pipeline uses state-of-the-art tools and practices to ensure consistent and reliable benchmarking:
+
+### Data Preparation
+- Automated data validation and quality checks
+- Standardized preprocessing pipeline
+- Consistent train/validation/test splits
+
+### Evaluation Metrics
+- **Accuracy**: Overall task completion success rate
+- **F1 Score**: Balance between precision and recall
+- **Domain-specific metrics** for specialized tasks
+- **Time-to-completion** measurements
+
+### Tools and Infrastructure
+- Integration with MLflow for experiment tracking
+- Weights & Biases for visualization
+- Automated report generation
+- Version-controlled benchmark configurations
+
+### Continuous Monitoring
+- Weekly automated evaluations
+- Performance trend analysis
+- Regression detection
+- Automated alerts for significant changes
+
 ## Performance Comparison
 
 Here's how different models perform across various domains:

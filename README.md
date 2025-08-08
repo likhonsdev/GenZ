@@ -8,6 +8,84 @@ This repository contains the source code and resources for **GenZ**, a groundbre
 
 ```
 .
+├── config/                  # Configuration files
+│   └── automl_config.yaml  # AutoML configuration
+├── data/                   # Data directory
+│   ├── raw/               # Raw input data
+│   └── processed/         # Processed and split data
+├── docs/                  # Documentation files
+│   ├── benchmarks/       # Benchmark results and analysis
+│   └── training/         # Training configuration docs
+├── GenZ-checkpoints/      # Model checkpoints directory
+├── reports/               # Generated reports
+│   └── evaluation/       # Model evaluation results
+├── scripts/              # Utility scripts
+│   ├── data_processing.py    # Data preprocessing
+│   ├── evaluate_model.py     # Model evaluation
+│   └── update_benchmark_docs.py  # Documentation updater
+└── workflows/            # CI/CD pipeline definitions
+```
+
+## Automated Model Creation
+
+Our project implements a sophisticated automated model creation pipeline that handles everything from data preprocessing to model evaluation and documentation. Here's how it works:
+
+### 1. Data Processing
+- Automated data validation and quality checks
+- Preprocessing and cleaning routines
+- Train/validation/test splitting
+- Integration with HuggingFace datasets
+
+### 2. Model Training
+- Configuration-driven training using `automl_config.yaml`
+- Support for multiple model architectures
+- Automated hyperparameter optimization
+- Checkpoint management and versioning
+
+### 3. Evaluation Pipeline
+- Comprehensive model evaluation
+- Multiple metric tracking (accuracy, F1-score)
+- Integration with MLflow and Weights & Biases
+- Automated performance visualization
+
+### 4. Documentation
+- Auto-generated benchmark reports
+- Performance visualizations
+- Training configuration documentation
+- Automated MkDocs deployment
+
+## CI/CD Workflows
+
+Our project uses GitHub Actions for automation with three main workflows:
+
+### Training Workflow
+- **Trigger**: Manual or weekly (Sunday at midnight)
+- **Purpose**: Trains models using AutoML
+- **Features**:
+  - Configurable training parameters
+  - Google Cloud Vertex AI integration
+  - Automated checkpoint management
+  - Results logging to W&B/MLflow
+
+### Training Workflow
+- **Trigger**: Manual or weekly (Sunday at midnight)
+- **Purpose**: Automatically trains the GPT and image classifier models
+- **Output**: Updated model checkpoints in `GenZ-checkpoints/`
+
+### Pipeline Workflow
+- **Trigger**: On push/PR to main branch
+- **Features**:
+  - Code linting (black, isort)
+  - Unit tests with coverage
+  - Documentation building
+  - Artifact upload
+
+### Release Workflow
+- **Trigger**: On version tags (v*)
+- **Features**:
+  - Package building
+  - GitHub Release creation
+  - PyPI deployment
 ├── .github/workflows/
 │   ├── main.yml       # GitHub Actions workflow for model training and deployment.
 │   └── docs.yml       # GitHub Actions workflow for documentation deployment.
@@ -98,3 +176,7 @@ You can also run the training process locally using Docker.
     docker run --rm -e HUGGING_FACE_HUB_TOKEN=<your_token> genz-trainer
     ```
     Replace `<your_token>` with your actual Hugging Face Hub token.
+
+## Copyright and License
+
+This project is copyrighted by Likhon Sheikh (t.me/likhonsheikh) and is licensed under the MIT License. All code and data are encrypted and protected under international copyright laws.

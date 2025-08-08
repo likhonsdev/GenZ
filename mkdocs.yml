@@ -1,6 +1,7 @@
 site_name: GenZ Documentation
 theme:
   name: material
+  language: bn
   features:
     - navigation.tabs
     - navigation.sections
@@ -20,10 +21,21 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/likhonsdev
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/likhon-sheikh/
+  creator:
+    name: Likhon Sheikh
+    twitter: https://twitter.com/likhonsdev
+copyright: Copyright &copy; 2024 Likhon Sheikh
 
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - Architecture: PROJECT_ARCHITECTURE.md
   - Training:
     - Setup: training/setup.md
     - Configuration: training/configuration.md
@@ -34,6 +46,8 @@ nav:
     - GAIA Performance: benchmarks/gaia.md
   - API Reference: api-reference.md
   - Contributing: contributing.md
+  - Creator: creator.md
+  - Bangla Direct: bangla-direct.md
 
 markdown_extensions:
   - pymdownx.highlight
@@ -44,6 +58,14 @@ markdown_extensions:
   - footnotes
   - attr_list
   - md_in_html
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+  - git-revision-date-localized
 
 repo_url: https://github.com/likhonsdev/GenZ
 repo_name: likhonsdev/GenZ

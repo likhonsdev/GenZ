@@ -1,0 +1,6 @@
+# deployment/slurm_job.yaml
+job_name: bloom-inference
+nodes: 4
+gpu_type: a100-80gb
+env_vars:
+  CONFIG_PATH: /mnt/configs/bloom_config.yaml
