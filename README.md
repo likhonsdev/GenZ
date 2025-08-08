@@ -1,12 +1,27 @@
 # GenZ: The First-Ever Bangla AGI Model
 
-This repository contains the source code and resources for **GenZ**, a groundbreaking project to create the first-ever Bangla Artificial General Intelligence (AGI) model. Our mission is to build an autonomous and highly capable AI that understands and communicates in the Bangla language with unprecedented fluency and accuracy.
+**"আমরা কৃত্রিম সাধারণ বুদ্ধিমত্তার জগতে একটি নতুন দিগন্ত উন্মোচন করছি।"**
+
+This repository contains the source code and resources for **GenZ**, a groundbreaking project to create the first-ever Bangla Artificial General Intelligence (AGI) model. Our mission is to build an autonomous and highly capable AI that understands and communicates in the Bangla language with unprecedented fluency and accuracy. This project is proudly led by [likhonsheikh.xyz](https://likhonsheikh.xyz).
 
 ## Automated Workflow
 
 - **Trigger**: The workflow is triggered automatically on every push to the `main` branch.
 - **Training**: The `train_gpt_genz.py` script fine-tunes a large language model on a Bangla dataset.
 - **Deployment**: After training, the model is automatically pushed to the [Hugging Face Hub](https://huggingface.co/likhonsdev/GenZ).
+
+### Workflow Diagram
+
+```
++-------------------+      +----------------------+      +-------------------------+
+|                   |      |                      |      |                         |
+|  Push to `main`   +----->+  GitHub Actions CI/CD  +----->+  Hugging Face Hub Model |
+|                   |      |                      |      |                         |
++-------------------+      +----------------------+      +-------------------------+
+```
+
+### Conceptual Sketch
+*(A sketch illustrating the architecture of the Bangla AGI will be added here soon.)*
 
 ## Setup
 
