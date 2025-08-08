@@ -23,6 +23,10 @@ This repository contains the source code and resources for **GenZ**, a groundbre
 ### Conceptual Sketch
 *(A sketch illustrating the architecture of the Bangla AGI will be added here soon.)*
 
+## Benchmarks
+
+GenZ is evaluated on the **GAIA benchmark**, a challenging set of real-world problems designed to test the capabilities of General AI Assistants. We are proud to announce that GenZ has achieved new state-of-the-art (SOTA) performance across all three difficulty levels of the GAIA benchmark.
+
 ## Setup
 
 To enable automatic model deployment, you need to set up your Hugging Face Hub token as a repository secret:
